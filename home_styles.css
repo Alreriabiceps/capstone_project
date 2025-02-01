@@ -1,0 +1,86 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    color: #333333;
+}
+
+header {
+    background: #ffffff;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    color: #333333;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.menu a:hover {
+    background: #0056b3;
+}
+
+main {
+    margin-top: 120px; /* Adjust this value to match the height of the header */
+    width: 80%;
+    max-width: 800px;
+}
+
+.content-section {
+    display: none;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    margin-top: 0;
+}
+
+.content-section p {
+    color: #666666;
+}
+
