@@ -14,8 +14,23 @@
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <label for="role">Role:</label>
+            <div class="role-buttons">
+                <button type="button" class="role-button" data-role="admin">Admin</button>
+                <button type="button" class="role-button" data-role="staff">Staff</button>
+            </div>
+            <input type="hidden" id="role" name="role" value="">
             <button type="submit" name="login">Sign In</button>
         </form>
     </div>
+    <script>
+        document.querySelectorAll('.role-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('role').value = this.getAttribute('data-role');
+                document.querySelectorAll('.role-button').forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
 </body>
 </html>
