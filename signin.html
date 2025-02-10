@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="signin_styles.css">
 </head>
 <body>
+    <div class="dark-mode-toggle">
+        <label for="dark-mode">Dark Mode:</label>
+        <input type="checkbox" id="dark-mode">
+    </div>
     <div class="container">
         <h2>Sign In</h2>
         <form action="index.php" method="POST">
@@ -14,6 +18,7 @@
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <a href="reset_password.php" class="reset-password">Forgot your password?</a>
             <label for="role">Role:</label>
             <div class="role-buttons">
                 <button type="button" class="role-button" data-role="admin">Admin</button>
@@ -23,6 +28,9 @@
             <button type="submit" name="login">Sign In</button>
         </form>
     </div>
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
     <script>
         document.querySelectorAll('.role-button').forEach(button => {
             button.addEventListener('click', function() {
@@ -30,6 +38,10 @@
                 document.querySelectorAll('.role-button').forEach(btn => btn.classList.remove('selected'));
                 this.classList.add('selected');
             });
+        });
+
+        document.getElementById('dark-mode').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
         });
     </script>
 </body>

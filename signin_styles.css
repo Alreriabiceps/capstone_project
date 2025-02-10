@@ -5,28 +5,42 @@ body {
     font-family: 'Roboto', sans-serif;
     background: #ffffff; /* White background */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: #000000;
+    color: #1DA1F2; /* Twitter blue color */
+    position: relative;
+}
+
+body.dark-mode {
+    background: #121212; /* Dark background */
+    color: #ffffff; /* White text color */
 }
 
 .container {
-    background: #f8f9fa; /* Slightly off-white for contrast */
-    padding: 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #f5f8fa; /* Light blue background for container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     text-align: center;
 }
 
+body.dark-mode .container {
+    background: #1e1e1e; /* Darker background for container */
+}
+
 h2 {
-    margin-bottom: 25px;
-    color: #007bff;
-    font-size: 26px;
-    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1DA1F2; /* Twitter blue color */
+    font-size: 24px;
+}
+
+body.dark-mode h2 {
+    color: #ffffff; /* White text color */
 }
 
 form {
@@ -37,32 +51,60 @@ form {
 
 label {
     display: block;
-    margin-bottom: 5px;
-    color: #333333;
-    text-align: left;
+    margin-bottom: 8px;
+    color: #657786; /* Darker grey color for labels */
+    text-align: left; /* Align labels to the left */
+    margin-left: 10px; /* Add some left margin */
     width: 100%;
     font-size: 14px;
     font-weight: 600;
 }
 
+body.dark-mode label {
+    color: #dddddd; /* Lighter grey color for labels */
+}
+
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #cccccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e8ed; /* Light grey border */
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff; /* White background for inputs */
+    color: #14171a; /* Dark grey text color */
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"],
+body.dark-mode select {
+    background-color: #333; /* Dark background for inputs */
+    color: #ffffff; /* White text color */
+    border: none;
+}
+
+.reset-password {
+    color: #1DA1F2; /* Twitter blue color for the link */
+    text-decoration: none;
     font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+body.dark-mode .reset-password {
+    color: #007bff; /* Blue color for the link in dark mode */
+}
+
+.reset-password:hover {
+    text-decoration: underline;
 }
 
 button {
-    padding: 12px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background-color: #1DA1F2; /* Twitter blue background for button */
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -70,20 +112,26 @@ button {
     font-weight: bold;
     margin-top: 10px;
     transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.3);
 }
 
 button:hover {
-    background: linear-gradient(135deg, #0056b3, #003d82);
+    background-color: #0d95e8; /* Darker blue on hover */
 }
 
 input::placeholder {
-    color: #888888;
+    color: #657786; /* Darker grey color for placeholders */
 }
 
-/* Role Selection Buttons */
+body.dark-mode input::placeholder {
+    color: #aaaaaa; /* Lighter grey color for placeholders in dark mode */
+}
+
+/* Role Buttons Styling */
 .role-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -93,20 +141,88 @@ input::placeholder {
     padding: 12px;
     border: none;
     border-radius: 5px;
-    background: #e0e0e0;
-    color: #333;
+    background: #e1e8ed; /* Light grey background */
+    color: #14171a; /* Dark grey text color */
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
     transition: background 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .role-button {
+    background: #333; /* Dark background for role buttons */
+    color: #ffffff; /* White text color */
 }
 
 .role-button.selected {
-    background: #007bff;
+    background: #1DA1F2; /* Twitter blue background for selected button */
     color: white;
 }
 
 .role-button:hover {
-    background: #0056b3;
+    background: #0d95e8; /* Darker blue on hover */
     color: white;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #657786; /* Darker grey color for footer text */
+    font-size: 14px;
+}
+
+body.dark-mode footer {
+    color: #dddddd; /* Lighter grey color for footer text in dark mode */
+}
+
+/* Dark Mode Toggle Styling */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle label {
+    margin-right: 10px;
+    color: #657786; /* Darker grey color for toggle label */
+}
+
+body.dark-mode .dark-mode-toggle label {
+    color: #dddddd; /* Lighter grey color for toggle label in dark mode */
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #e1e8ed;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked {
+    background: #1DA1F2;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
 }
